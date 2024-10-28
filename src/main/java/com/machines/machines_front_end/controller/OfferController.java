@@ -301,7 +301,7 @@ public class OfferController {
     @PageRoleGuard(redirectTo = "/", authenticated = true)
     public String showPromotionForm(@PathVariable UUID id, Model model) {
         OfferResponseDTO offerResponseDTO = offerClient.getById(id);
-        model.addAttribute("id", offerResponseDTO.getUniqueShortId());
+        model.addAttribute("id", offerResponseDTO.getId());
         return "/offers/offer-types";
     }
 
